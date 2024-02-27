@@ -9,16 +9,19 @@ hero:
       text: 阅读博客
       link: /posts/about
     - theme: alt
-      text: 老博客
+      text: 退休博客
       link: https://c263e27b.blog-qgzk.pages.dev
 
 features:
   - title: 太极编码器
-    details: 快来试试这款花里胡哨的编码器吧喵～
+    details: "快试试这款花里胡哨的编码器吧喵～"
     link: https://cat7373.github.io/taiji-encode
   - title: 济南大集
-    details: 济南人赶集信息工具
+    details: 帮济南人赶大集的小工具
     link: https://jinan-market.cat73.org
+  - title: 买云服务返现
+    details: 买阿里、腾讯、华为、亚马逊等云服务返现金啦，直接到个人账户，广快联系我了解更多吧喵～
+    link: /posts/about
   - title: Jim's Notes
     details: Follow your heart
     icon:

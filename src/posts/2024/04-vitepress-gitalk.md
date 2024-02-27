@@ -22,7 +22,9 @@ https://blog.csdn.net/qq_30317039/article/details/132427910
 
 ## 集成 Gitalk
 
-1. 在 `.vitepress` 目录中创建一个 `theme` 目录，内创建 `index.ts` 文件，用自己的 Layout 替换默认的 Layout，文件内容：
+1. 运行 `pnpm i gitalk vue -D` 安装必要依赖；
+
+2. 在 `.vitepress` 目录中创建一个 `theme` 目录，内创建 `index.ts` 文件，用自己的 Layout 替换默认的 Layout，文件内容：
 
    ```js
    import type { Theme } from 'vitepress'
@@ -39,7 +41,7 @@ https://blog.csdn.net/qq_30317039/article/details/132427910
    export default theme
    ```
 
-2. 在 `theme` 目录中创建一个 `layout` 目录，内创建 `GitalkLayout.vue` 文件，文件内容：
+3. 在 `theme` 目录中创建一个 `layout` 目录，内创建 `GitalkLayout.vue` 文件，文件内容：
 
    ```html
    <template>
@@ -82,16 +84,16 @@ https://blog.csdn.net/qq_30317039/article/details/132427910
 
      // 创建评论组件
      const gitTalk = new Gitalk({
-       // GitHub 账号
-       owner: 'Cat7373',    // <==== 按你的实际情况修改 ====>
-       // 仓库名
-       repo: 'VitePressBlog',    // <==== 按你的实际情况修改 ====>
-       // 客户端 ID
-       clientID: '7e893f940e4723d2af60',    // <==== 按你的实际情况修改 ====>
-       // 客户端密钥
-       clientSecret: 'b5336eb0b13e2b09d26bc6f7fc84752c7c104db3',    // <==== 按你的实际情况修改 ====>
-       // Github 账号
-       admin: [ 'Cat7373' ],    // <==== 按你的实际情况修改 ====>
+       // GitHub 账号 <==== 按你的实际情况修改 ====>
+       owner: 'Cat7373',
+       // 仓库名 <==== 按你的实际情况修改 ====>
+       repo: 'VitePressBlog',
+       // 客户端 ID <==== 按你的实际情况修改 ====>
+       clientID: '7e893f940e4723d2af60',
+       // 客户端密钥 <==== 按你的实际情况修改 ====>
+       clientSecret: 'b5336eb0b13e2b09d26bc6f7fc84752c7c104db3',
+       // Github 账号 <==== 按你的实际情况修改 ====>
+       admin: [ 'Cat7373' ],
        // 创建 Issue 时，为 Issue 增加的标签
        labels: [ 'GitTalk' ],
        // 如果 Issue 不存在，且登陆的是管理员账号，是否显示创建 Issue 按钮
@@ -114,6 +116,6 @@ https://blog.csdn.net/qq_30317039/article/details/132427910
    </script>
    ```
 
-3. 修改 `GitalkLayout.vue` 中的五个配置项，完活
+4. 修改 `GitalkLayout.vue` 中的五个配置项，完活；
 
-4. 可直接 copy [我的集成代码](https://github.com/Cat7373/VitePressBlog/tree/main/src/.vitepress/theme)，改一下配置即可
+5. 可直接 copy [我的集成代码](https://github.com/Cat7373/VitePressBlog/tree/main/src/.vitepress/theme)，改下配置即可。

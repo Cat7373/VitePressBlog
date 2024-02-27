@@ -25,6 +25,7 @@ export default defineConfig({
         text: '2024',
         collapsed: false,
         items: [
+          { text: 'Puppeteer 随笔', link: '/posts/2024/06-puppeteer' },
           { text: 'Cloudflare 部署 VitePress 最后修改时间不正确', link: '/posts/2024/05-cloudflare-vitepress-lastupdate' },
           { text: '通过 Gitalk 为 VitePress 增加评论功能', link: '/posts/2024/04-vitepress-gitalk' },
           { text: 'Navicat 15/16 在 MacOS 无限试用', link: '/posts/2024/03-navicat-trial' },
@@ -44,7 +45,7 @@ export default defineConfig({
     ],
 
     footer: {
-      copyright: `版权所有 © 2024-${new Date().getFullYear()} Cat73 &nbsp; &nbsp; Powered VitePress`,
+      copyright: `版权所有 © 2024-${new Date().getFullYear()} Cat73 &nbsp; &nbsp; Powered by VitePress`,
     },
 
     editLink: {
