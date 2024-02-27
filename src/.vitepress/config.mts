@@ -44,7 +44,7 @@ export default defineConfig({
     ],
 
     footer: {
-      copyright: `版权所有 © 2024-${new Date().getFullYear()} Cat73`,
+      copyright: `版权所有 © 2024-${new Date().getFullYear()} Cat73 &nbsp; &nbsp; Powered VitePress`,
     },
 
     editLink: {
