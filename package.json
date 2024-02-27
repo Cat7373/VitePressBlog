@@ -1,0 +1,14 @@
+{
+  "name": "cat73-blog",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "type": "module",
+  "devDependencies": {
+    "vitepress": "1.0.0-rc.44"
+  }
+}
