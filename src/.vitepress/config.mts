@@ -8,13 +8,13 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
   ],
   sitemap: {
     hostname: 'https://blog.cat73.org'
   },
   themeConfig: {
-    logo: { src: '/uploads/headimg.jpg', width: 24, height: 24 },
+    logo: { src: '/uploads/headimg.jpg' },
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -35,7 +35,27 @@ export default defineConfig({
     ],
 
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        locales: {
+          zh: {
+            translations: {
+              button: {
+                buttonText: '搜索文档',
+                buttonAriaLabel: '搜索文档',
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                },
+              },
+            },
+          },
+        },
+      },
     },
 
     socialLinks: [
@@ -44,21 +64,21 @@ export default defineConfig({
     ],
 
     footer: {
-      copyright: `版权所有 © 2024-${new Date().getFullYear()} Cat73`
+      copyright: `版权所有 © 2024-${new Date().getFullYear()} Cat73`,
     },
 
     editLink: {
       text: '在 GitHub 上查看此页面',
-      pattern: 'https://github.com/Cat7373/VitePressBlog/tree/main/src/:path'
+      pattern: 'https://github.com/Cat7373/VitePressBlog/tree/main/src/:path',
     },
 
     docFooter: {
       prev: '上一页',
-      next: '下一页'
+      next: '下一页',
     },
 
     outline: {
-      label: '页面导航'
+      label: '页面导航',
     },
 
     lastUpdated: {
