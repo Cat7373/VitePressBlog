@@ -47,6 +47,10 @@ export default defineConfig({
       copyright: `版权所有 © 2024-${new Date().getFullYear()} Cat73`
     },
 
+    editLink: {
+      pattern: 'https://github.com/Cat7373/VitePressBlog/tree/main/src/:path'
+    },
+
     docFooter: {
       prev: '上一页',
       next: '下一页'
