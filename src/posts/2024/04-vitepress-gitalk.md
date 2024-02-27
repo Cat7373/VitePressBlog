@@ -22,7 +22,7 @@ https://blog.csdn.net/qq_30317039/article/details/132427910
 
 ## 集成 Gitalk
 
-1. 运行 `pnpm i gitalk vue -D` 安装必要依赖；
+1. 运行 `npm i gitalk vue -D` 安装必要依赖；
 
 2. 在 `.vitepress` 目录中创建一个 `theme` 目录，内创建 `index.ts` 文件，用自己的 Layout 替换默认的 Layout，文件内容：
 
