@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: 阅读博客
-      link: /posts/about.html
+      link: /posts/about
     - theme: alt
       text: 老博客
       link: https://c263e27b.blog-qgzk.pages.dev
