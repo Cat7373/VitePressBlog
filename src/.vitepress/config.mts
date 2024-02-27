@@ -10,6 +10,9 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
+  sitemap: {
+    hostname: 'https://blog.cat73.org'
+  },
   themeConfig: {
     logo: { src: '/uploads/headimg.jpg', width: 24, height: 24 },
 
