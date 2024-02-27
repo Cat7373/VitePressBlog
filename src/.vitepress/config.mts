@@ -15,7 +15,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '关于', link: '/posts/about' },
+      { text: '关于', link: '/posts/about.html' },
     ],
 
     sidebar: [
@@ -23,7 +23,7 @@ export default defineConfig({
         text: '2024',
         collapsed: false,
         items: [
-          { text: 'PM2 环境下自动更新的坑', link: '/posts/2024/01-pm2-treekill' },
+          { text: 'PM2 环境下自动更新的坑', link: '/posts/2024/01-pm2-treekill.html' },
         ]
       },
     ],
