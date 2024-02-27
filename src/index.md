@@ -11,7 +11,7 @@ hero:
       link: /posts/about
     - theme: alt
       text: 老博客
-      link: https://old-blog.cat73.org
+      link: https://c263e27b.blog-qgzk.pages.dev
 
 features:
   - title: Jim's Notes
