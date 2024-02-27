@@ -22,7 +22,7 @@ navigator.webdriver
 
 直接用 Puppeteer 控制浏览器去访问，就像在网站面前脱了裤子裸奔一样，毫无防御，对面随便一攻，我们就破了；
 
-
+---
 
 这其中有一个著名的[检测工具](https://bot.sannysoft.com)，它会检测一长串各类特征，把你没防御好，导致你暴露的特征标红显示；
 
@@ -38,9 +38,9 @@ navigator.webdriver
 
 可以看到，均被检测到被自动程序控制，Headless 模式下 UA 里因为有 Headless 字样，也被检测出了；
 
+---
 
-
-那我们肯定不能脱掉裤子裸奔对吧，这时候可以使用反检测插件：
+那我们肯定不能脱掉裤子裸奔对吧，这时可以用反检测插件：
 
 1. 运行 `npm i puppeteer-extra puppeteer-extra-plugin-stealth puppeteer-extra-plugin-anonymize-ua` 安装依赖
 
@@ -64,7 +64,7 @@ navigator.webdriver
    AnonymizeUaPlugin().onPageCreated(page)
    ```
 
-
+---
 
 一切就绪，我们再检测一次：
 
