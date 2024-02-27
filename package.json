@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vitepress dev src",
     "build": "vitepress build src",
+    "cfbuild": "git fetch --unshallow && vitepress build src",
     "preview": "vitepress preview src"
   },
   "type": "module",
