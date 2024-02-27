@@ -49,7 +49,7 @@ export default defineConfig({
     },
 
     editLink: {
-      text: '在 GitHub 上查看此页面',
+      text: '查看源代码',
       pattern: 'https://github.com/Cat7373/VitePressBlog/tree/main/src/:path',
     },
 
