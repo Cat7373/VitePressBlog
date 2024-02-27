@@ -14,6 +14,12 @@ hero:
       link: https://c263e27b.blog-qgzk.pages.dev
 
 features:
+  - title: 太极编码器
+    details: 快来试试这款花里胡哨的编码器吧喵～
+    link: https://cat7373.github.io/taiji-encode
+  - title: 济南大集
+    details: 济南人赶集信息工具
+    link: https://jinan-market.cat73.org
   - title: Jim's Notes
     details: Follow your heart
     icon:
