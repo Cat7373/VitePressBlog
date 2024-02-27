@@ -27,4 +27,7 @@ features:
     icon:
       src: https://avatars1.githubusercontent.com/u/5828650?v=3&u=3612a2f967b6960d7bca6f747a79c1ff7f90d5e1&s=140
     link: https://notes.jimliang.com
+  - title: 红警HBK08
+    details: 广快开饭！
+    link: https://space.bilibili.com/1629347259
 ---
