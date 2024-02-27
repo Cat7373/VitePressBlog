@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Cat73 Blog",
   description: "喵星人占领地球战略指挥部",
-  lang: 'zh-CN',
+  lang: 'zh-Hans',
   cleanUrls: true,
   lastUpdated: true,
   head: [
@@ -36,26 +36,6 @@ export default defineConfig({
 
     search: {
       provider: 'local',
-      options: {
-        locales: {
-          zh: {
-            translations: {
-              button: {
-                buttonText: '搜索文档',
-                buttonAriaLabel: '搜索文档',
-              },
-              modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: {
-                  selectText: '选择',
-                  navigateText: '切换',
-                },
-              },
-            },
-          },
-        },
-      },
     },
 
     socialLinks: [
