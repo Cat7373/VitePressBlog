@@ -2,7 +2,7 @@
 
 最近用 VitePress 重新搭建了博客，但它目前未自带评论支持，网上搜了搜，有些文章教如何用 Gitalk 添加评论功能，但附带的代码吧，看起来作者都不大熟 Vue，多没法使用；
 
-为了路过朋友们少掉头发，参考 [GItalk 官方文档](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)，集成了评论插件，在此附上攻略。
+为了路过朋友少掉头发，参考 [Gitalk 官方文档](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)，集成了评论插件，在此附上攻略。
 
 
 
