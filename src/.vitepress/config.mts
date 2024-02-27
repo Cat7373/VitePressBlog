@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Cat73 Blog",
   description: "喵星人占领地球战略指挥部",
@@ -16,7 +15,6 @@ export default defineConfig({
   themeConfig: {
     logo: { src: '/uploads/headimg.jpg' },
 
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
       { text: '关于', link: '/posts/about' },
