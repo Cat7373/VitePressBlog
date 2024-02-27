@@ -27,6 +27,7 @@ export default defineConfig({
         text: '2024',
         collapsed: false,
         items: [
+          { text: '通过 Gitalk 为 VitePress 增加评论功能', link: '/posts/2024/04-vitepress-gitalk' },
           { text: 'Navicat 15/16 在 MacOS 无限试用', link: '/posts/2024/03-navicat-trial' },
           { text: 'Cloudflare 部署 VitePress 不显示文章', link: '/posts/2024/02-cloudflare-vitepress' },
           { text: 'PM2 环境下自动更新的坑', link: '/posts/2024/01-pm2-treekill' },
