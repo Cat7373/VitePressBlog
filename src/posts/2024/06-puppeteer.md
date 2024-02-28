@@ -79,6 +79,23 @@ TODO
 
 
 
+### IP 地址
+
+稳定性要求不高，量不大的，可以用梯子或 VPS 解决，需要一定配置工作：
+
+* [一元机场 (便宜，IP 多)](https://xn--4gq62f52gdss.club/#/register?code=m3ZMtQDz)
+* [JustMySocks (稳定)](https://justmysocks.net/members/aff.php?aff=158)
+* [Vultr (注册送 $100)](https://www.vultr.com/?ref=9369190-8H)
+
+稳定性要求高的，推荐几个买 IP 的地方，部分有免费试用（都挺贵，商用考虑吧）：
+
+* [IPFoxy](https://referral.ipfoxy.com/RiHcWI)
+* [StormProxies](https://www.stormproxies.cn)
+* [Kookeey](https://www.kookeey.com)
+* [SmartProxy](https://www.smartproxy.cn)
+
+
+
 ## 崩溃处理
 
 浏览器呢是内存大户，内存不足时，容易优先被杀，维护人员也可能不注意关掉浏览器；
