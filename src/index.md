@@ -10,7 +10,7 @@ hero:
       link: /posts/about
     - theme: alt
       text: 退休博客
-      link: https://c263e27b.blog-qgzk.pages.dev
+      link: https://old-blog.cat73.org
 
 features:
   - title: 太极编码器
