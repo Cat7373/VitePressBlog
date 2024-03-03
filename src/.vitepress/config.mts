@@ -25,6 +25,7 @@ export default defineConfig({
         text: '2024',
         collapsed: false,
         items: [
+          { text: 'Mac 通过 FTP 上传文件', link: '/posts/2024/07-mac-ftp' },
           { text: 'Puppeteer 随笔', link: '/posts/2024/06-puppeteer' },
           { text: 'Cloudflare 部署 VitePress 最后修改时间不正确', link: '/posts/2024/05-cloudflare-vitepress-lastupdate' },
           { text: '通过 Gitalk 为 VitePress 增加评论功能', link: '/posts/2024/04-vitepress-gitalk' },
