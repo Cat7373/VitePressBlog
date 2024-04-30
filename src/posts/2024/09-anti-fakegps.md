@@ -75,7 +75,7 @@ GPS 位置是由手机接收几颗卫星的信号，获得设备到几颗卫星�
 
 ## 5. 检测代码示例
 
-基于上述逻辑，我们开发了 [Anti-FakeGPS](https://www.npmjs.com/package/anti-fakegps)，使用演示如下：
+基于上述逻辑，我们开发了 [Anti-FakeGPS](https://www.npmjs.com/package/anti-fakegps)，[使用演示](https://cat7373.github.io/Anti-FakeGPS)代码如下：
 
 ```ts
 import { useAntiFakeGPS } from 'anti-fakegps'
