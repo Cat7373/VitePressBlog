@@ -13,6 +13,9 @@ hero:
       link: https://old-blog.cat73.org
 
 features:
+  - title: 模拟定位检测器
+    details: "网页内检测市面上大部分模拟定位的方案"
+    link: https://cat7373.github.io/anti-fakegps
   - title: 太极编码器
     details: "快试试这款花里胡哨的编码器吧喵～"
     link: https://cat7373.github.io/taiji-encode
