@@ -25,6 +25,7 @@ export default defineConfig({
         text: '2024',
         collapsed: false,
         items: [
+          { text: '使用 ttl.sh 替换阿里 Docker 镜像仓库', link: '/posts/2024/09-anti-fakegps' },
           { text: '使用 ttl.sh 替换阿里 Docker 镜像仓库', link: '/posts/2024/08-ttl-sh' },
           { text: 'Mac 通过 FTP 上传文件', link: '/posts/2024/07-mac-ftp' },
           { text: 'Puppeteer 随笔', link: '/posts/2024/06-puppeteer' },

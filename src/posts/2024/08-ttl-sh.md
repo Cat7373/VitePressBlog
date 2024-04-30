@@ -1,6 +1,6 @@
 # 使用 ttl.sh 替换阿里 Docker 镜像仓库
 
-我们在 100+ 台服务器通过 docker 发布和更新项目，使用 aliyun 提供的免费版镜像仓库时，碰到 `toomanyrequests: too many requests` 错误，尽管通过重试机制最终可以成功，但 100+ 台服务器，完成一次更新要十几分钟；
+我们在 100+ 台服务器通过 docker 发布和更新项目，使用 aliyun 的免费版镜像仓库时，碰到 `toomanyrequests: too many requests` 错误，尽管通过重试机制最终可以成功，但 100+ 台服务器，完成一次更新要十几分钟；
 
 在网上搜寻私有、免费镜像仓库时，找到了 [ttl.sh](https://ttl.sh)，基于 Cloudflare 服务器，基本等于不限量限速，速度快，无需注册账号，简单的用镜像名来处理保密问题，一天后自动删除上传的镜像；
 
