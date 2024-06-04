@@ -1,4 +1,4 @@
-# Navicat 15/16 在 MacOS 无限试用
+# Navicat 15/16/17 在 MacOS 无限试用
 
 各类破解版 Navicat 坑太多，要么崩溃，要么记不住密码，还不确定是否安全，分享下 Mac 下直接用官方版试用的脚本：
 
@@ -17,6 +17,9 @@ version=${BASH_REMATCH[1]}
 echo "Detected Navicat Premium version $version"
 
 case $version in
+    "17")
+        file=~/Library/Preferences/com.navicat.NavicatPremium.plist
+        ;;
     "16")
         file=~/Library/Preferences/com.navicat.NavicatPremium.plist
         ;;
@@ -26,7 +29,7 @@ case $version in
     *)
         echo "Version '$version' not handled"
         exit 1
-       ;;
+        ;;
 esac
 
 echo -n "Reseting trial time..."
