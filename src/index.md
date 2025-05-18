@@ -25,6 +25,11 @@ features:
   - title: 买云服务返现
     details: 买阿里、腾讯、华为、亚马逊等云服务返现金啦，直接到个人账户，广快联系我了解更多吧喵～
     link: /posts/about
+  - title: Shiya
+    details: shiya 的博客
+    icon:
+      src: https://linux.do/uploads/default/original/4X/c/a/b/cab454cc569520813e632fd4a5989106ca76d1e7.jpeg
+    link: https://blog.shiyaa.me
   - title: Jim's Notes
     details: Follow your heart
     icon:
