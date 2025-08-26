@@ -277,7 +277,7 @@
                 <div class="form-group">
                     <label for="quality-select">选择画质</label>
                     <select id="quality-select">
-                        <option value="1">1 (最差)</option>
+                        <option value="1" selected>1 (最好)</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -286,7 +286,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
-                        <option value="10" selected>10 (最好)</option>
+                        <option value="10">10 (最差)</option>
                     </select>
                 </div>
 
@@ -399,7 +399,10 @@
                 // 创建canvas用于绘制旋转后的图像
                 const canvas = document.createElement('canvas');
                 const ctx = canvas.getContext('2d');
-                
+
+                // 设置背景色
+                ctx.fillStyle = 'white';
+
                 // 设置canvas尺寸为图片尺寸
                 canvas.width = uploadedImage.width;
                 canvas.height = uploadedImage.height;
