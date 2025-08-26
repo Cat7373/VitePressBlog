@@ -260,9 +260,6 @@
                 <div class="form-group">
                     <label for="frame-delay-select">选择帧间隔</label>
                     <select id="frame-delay-select">
-                        <option value="1">1ms</option>
-                        <option value="3">3ms</option>
-                        <option value="5">5ms</option>
                         <option value="10">10ms</option>
                         <option value="15">15ms</option>
                         <option value="20">20ms</option>
@@ -423,9 +420,7 @@
                     if (currentFrame < frames) {
                         setTimeout(generateFrame, 10);
                     } else {
-                        console.log(111, gif)
                         gif.on('finished', function(blob) {
-                            console.log(222, blob, gif)
                             // 创建GIF预览
                             const gifUrl = URL.createObjectURL(blob);
                             gifContainer.innerHTML = `<img src="${gifUrl}" alt="旋转GIF">`;
