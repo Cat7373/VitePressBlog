@@ -273,6 +273,36 @@
                         <option value="100">100ms</option>
                     </select>
                 </div>
+
+                <div class="form-group">
+                    <label for="quality-select">选择画质</label>
+                    <select id="quality-select">
+                        <option value="1">1 (最差)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10" selected>10 (最好)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-count-select">选择工作线程数</label>
+                    <select id="worker-count-select">
+                        <option value="1">1 (最慢)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected>4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8 (最快)</option>
+                    </select>
+                </div>
                 
                 <div class="form-group">
                     <button id="generate-btn" disabled>生成GIF动画</button>
@@ -310,6 +340,8 @@
             const imageUpload = document.getElementById('image-upload');
             const angleSelect = document.getElementById('angle-select');
             const frameDelaySelect = document.getElementById('frame-delay-select');
+            const qualitySelect = document.getElementById('quality-select');
+            const workerCountSelect = document.getElementById('worker-count-select');
             const generateBtn = document.getElementById('generate-btn');
             const previewImage = document.getElementById('preview-image');
             const noImageText = document.getElementById('no-image-text');
@@ -353,6 +385,9 @@
                 
                 const angle = parseInt(angleSelect.value);
                 const frameDelay = parseInt(frameDelaySelect.value);
+                const quality = parseInt(qualitySelect.value);
+                const workerCount = parseInt(workerCountSelect.value);
+
                 const frames = 360 / angle;
                 
                 statusDiv.textContent = '正在生成GIF，请稍候...';
@@ -371,8 +406,8 @@
                 
                 // 创建GIF实例
                 gif = new GIF({
-                    workers: 1,
-                    quality: 10,
+                    workers: workerCount,
+                    quality: quality,
                     width: canvas.width,
                     height: canvas.height,
                 });
