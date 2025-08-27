@@ -248,8 +248,8 @@
                     <select id="direction-select">
                         <option value="1" selected>顺时针</option>
                         <option value="-1">逆时针</option>
-                        <option value="66660001">混沌 1.0</option>
-                        <option value="66660002">混沌 2.0</option>
+                        <option value="66660001">混沌</option>
+                        <option value="66660002">更多的混沌</option>
                     </select>
                 </div>
                 
@@ -449,9 +449,9 @@
                     
                     // 计算旋转角度
                     let rotation = currentFrame * angle * direction
-                    if (direction === 66660001) { // 混沌 1.0
+                    if (direction === 66660001) { // 混沌 - 随机抽原定计划的一帧出来
                         rotation = angle * Math.floor(Math.random() * frames);
-                    } else if (direction === 66660002) { // 混沌 2.0
+                    } else if (direction === 66660002) { // 更多的混沌 - 直接随机抽一个角度
                         rotation = Math.random() * 360;
                     }
                     
