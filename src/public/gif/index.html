@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片360度旋转GIF生成器</title>
+    <script src="gif.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+        
+        .controls {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .preview {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px dashed #4b6cb7;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        input[type="file"]:hover {
+            background-color: #e9ecef;
+        }
+        
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #4b6cb7;
+            border-radius: 8px;
+            background-color: white;
+            font-size: 1rem;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        button:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .preview-container {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #4b6cb7;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8f9fa;
+        }
+        
+        .preview-image {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+        }
+        
+        .gif-preview {
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .gif-preview img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .status.processing {
+            background-color: #ffeaa7;
+            color: #d35400;
+        }
+        
+        .status.complete {
+            background-color: #a3e4d7;
+            color: #27ae60;
+        }
+        
+        .download-btn {
+            display: none;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+            display: none;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            width: 0%;
+            transition: width 0.3s;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>图片360度旋转GIF生成器</h1>
+            <p class="description">上传图片，选择旋转角度，生成炫酷的旋转GIF动画</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="controls">
+                <div class="form-group">
+                    <label for="image-upload">选择图片</label>
+                    <input type="file" id="image-upload" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="direction-select">选择旋转方向</label>
+                    <select id="direction-select">
+                        <option value="1" selected>顺时针</option>
+                        <option value="-1">逆时针</option>
+                        <option value="0">混沌</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="angle-select">选择旋转角度间隔</label>
+                    <select id="angle-select">
+                        <option value="1">1度 (360 帧)</option>
+                        <option value="2">2度 (180 帧)</option>
+                        <option value="3">3度 (120 帧)</option>
+                        <option value="5" selected>5度 (72 帧)</option>
+                        <option value="6">6度 (60 帧)</option>
+                        <option value="8">8度 (45 帧)</option>
+                        <option value="9">9度 (40 帧)</option>
+                        <option value="10">10度 (36 帧)</option>
+                        <option value="15">15度 (24 帧)</option>
+                        <option value="20">20度 (18 帧)</option>
+                        <option value="30">30度 (12 帧)</option>
+                        <option value="40">40度 (9 帧)</option>
+                        <option value="60">60度 (6 帧)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="frame-delay-select">选择帧间隔</label>
+                    <select id="frame-delay-select">
+                        <option value="0">0ms (浏览器中可能更慢)</option>
+                        <option value="10">10ms (浏览器中可能更慢)</option>
+                        <option value="20">20ms</option>
+                        <option value="30" selected>30ms</option>
+                        <option value="40">40ms</option>
+                        <option value="50">50ms</option>
+                        <option value="60">60ms</option>
+                        <option value="70">70ms</option>
+                        <option value="80">80ms</option>
+                        <option value="90">90ms</option>
+                        <option value="100">100ms</option>
+                        <option value="110">110ms</option>
+                        <option value="120">120ms</option>
+                        <option value="130">130ms</option>
+                        <option value="140">140ms</option>
+                        <option value="150">150ms</option>
+                        <option value="160">160ms</option>
+                        <option value="170">170ms</option>
+                        <option value="180">180ms</option>
+                        <option value="190">190ms</option>
+                        <option value="200">200ms</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quality-select">选择画质</label>
+                    <select id="quality-select">
+                        <option value="1" selected>1 (画质好，处理慢)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="30">30 (画质差，处理快)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-count-select">选择工作线程数</label>
+                    <select id="worker-count-select">
+                        <option value="1">1 (最慢)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected>4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8 (最快)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <button id="generate-btn" disabled>生成GIF动画</button>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress" id="progress-bar"></div>
+                </div>
+                
+                <div id="status" class="status"></div>
+            </div>
+            
+            <div class="preview">
+                <h3>图片预览</h3>
+                <div class="preview-container">
+                    <img id="preview-image" class="preview-image" alt="预览图">
+                    <p id="no-image-text">请上传图片</p>
+                </div>
+                
+                <div class="gif-preview">
+                    <h3>GIF预览</h3>
+                    <div id="gif-container"></div>
+                    <a id="download-btn" class="download-btn" href="#" download="rotating-image.gif">下载GIF</a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 图片360度旋转GIF生成器</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageUpload = document.getElementById('image-upload');
+            const directionSelect = document.getElementById('direction-select');
+            const angleSelect = document.getElementById('angle-select');
+            const frameDelaySelect = document.getElementById('frame-delay-select');
+            const qualitySelect = document.getElementById('quality-select');
+            const workerCountSelect = document.getElementById('worker-count-select');
+            const generateBtn = document.getElementById('generate-btn');
+            const previewImage = document.getElementById('preview-image');
+            const noImageText = document.getElementById('no-image-text');
+            const gifContainer = document.getElementById('gif-container');
+            const statusDiv = document.getElementById('status');
+            const downloadBtn = document.getElementById('download-btn');
+            const progressBar = document.querySelector('.progress-bar');
+            const progress = document.getElementById('progress-bar');
+            
+            let uploadedImage = null;
+            let gif = null;
+            
+            // 图片上传处理
+            imageUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file || !file.type.match('image.*')) {
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedImage = new Image();
+                    uploadedImage.onload = function() {
+                        previewImage.src = uploadedImage.src;
+                        previewImage.style.display = 'block';
+                        noImageText.style.display = 'none';
+                        generateBtn.disabled = false;
+                        
+                        // 清除之前的GIF预览
+                        gifContainer.innerHTML = '';
+                        downloadBtn.style.display = 'none';
+                    };
+                    uploadedImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+            
+            // 生成GIF
+            generateBtn.addEventListener('click', function() {
+                if (!uploadedImage) return;
+                
+                const direction = parseInt(directionSelect.value);
+                const angle = parseInt(angleSelect.value);
+                const frameDelay = parseInt(frameDelaySelect.value);
+                const quality = parseInt(qualitySelect.value);
+                const workerCount = parseInt(workerCountSelect.value);
+
+                const frames = 360 / angle;
+                
+                statusDiv.textContent = '正在生成GIF，请稍候...';
+                statusDiv.className = 'status processing';
+                progressBar.style.display = 'block';
+                progress.style.width = '0%';
+                generateBtn.disabled = true;
+                
+                // 创建canvas用于绘制旋转后的图像
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+
+                // 设置canvas尺寸为图片尺寸
+                canvas.width = uploadedImage.width;
+                canvas.height = uploadedImage.height;
+                
+                // 创建GIF实例
+                gif = new GIF({
+                    workers: workerCount,
+                    quality: quality,
+                    width: canvas.width,
+                    height: canvas.height,
+                });
+
+                console.log('用于调试的 gif 实例', gif)
+                
+                // 生成每一帧
+                let currentFrame = 0;
+                
+                function generateFrame() {
+                    // 清除canvas
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    
+                    // 计算旋转角度
+                    const rotation = direction === 0 ? (angle * Math.floor(Math.random() * frames)) : (currentFrame * angle * direction);
+                    
+                    // 保存当前状态
+                    ctx.save();
+                    
+                    // 移动到中心点
+                    ctx.translate(canvas.width / 2, canvas.height / 2);
+                    
+                    // 旋转
+                    ctx.rotate(rotation * Math.PI / 180);
+                    
+                    // 绘制图像（注意调整位置）
+                    ctx.drawImage(
+                        uploadedImage, 
+                        -uploadedImage.width / 2, 
+                        -uploadedImage.height / 2,
+                        uploadedImage.width,
+                        uploadedImage.height
+                    );
+                    
+                    // 恢复状态
+                    ctx.restore();
+                    
+                    // 添加帧到GIF
+                    gif.addFrame(ctx, {copy: true, delay: frameDelay});
+                    
+                    // 更新进度
+                    currentFrame++;
+                    progress.style.width = `${(currentFrame / frames) * 100}%`;
+                    
+                    // 继续生成下一帧或完成
+                    if (currentFrame < frames) {
+                        setTimeout(generateFrame, 10);
+                    } else {
+                        gif.on('finished', function(blob) {
+                            // 创建GIF预览
+                            const gifUrl = URL.createObjectURL(blob);
+                            gifContainer.innerHTML = `<img src="${gifUrl}" alt="旋转GIF">`;
+                            downloadBtn.href = gifUrl;
+                            downloadBtn.style.display = 'inline-block';
+                            
+                            statusDiv.textContent = 'GIF生成完成！';
+                            statusDiv.className = 'status complete';
+                            generateBtn.disabled = false;
+                            progressBar.style.display = 'none';
+                        });
+                        
+                        gif.render();
+                    }
+                }
+                
+                // 开始生成帧
+                generateFrame();
+            });
+        });
+    </script>
+</body>
+</html>
