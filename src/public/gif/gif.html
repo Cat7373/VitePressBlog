@@ -248,7 +248,8 @@
                     <select id="direction-select">
                         <option value="1" selected>顺时针</option>
                         <option value="-1">逆时针</option>
-                        <option value="0">混沌</option>
+                        <option value="66660001">混沌 1.0</option>
+                        <option value="66660002">混沌 2.0</option>
                     </select>
                 </div>
                 
@@ -447,7 +448,12 @@
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     
                     // 计算旋转角度
-                    const rotation = direction === 0 ? (angle * Math.floor(Math.random() * frames)) : (currentFrame * angle * direction);
+                    let rotation = currentFrame * angle * direction
+                    if (direction === 66660001) { // 混沌 1.0
+                        rotation = angle * Math.floor(Math.random() * frames);
+                    } else if (direction === 66660002) { // 混沌 2.0
+                        rotation = Math.min(Math.random() * 360.00001, 360);
+                    }
                     
                     // 保存当前状态
                     ctx.save();
