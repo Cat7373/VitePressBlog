@@ -25,6 +25,7 @@ export default defineConfig({
         text: '修行',
         collapsed: false,
         items: [
+          { text: '杯子', link: '/posts/xiuxing/002-beizi' },
           { text: '亦梦', link: '/posts/xiuxing/001-yimeng' },
         ]
       },
