@@ -22,19 +22,6 @@ features:
   - title: 济南大集
     details: 帮济南人赶大集的小工具
     link: https://jinan-market.cat73.org
-  - title: 买云服务返现
-    details: 买阿里、腾讯、华为、亚马逊等云服务返现金啦，直接到个人账户，广快联系我了解更多吧喵～
-    link: /posts/about
-  - title: Shiya
-    details: shiya 的博客
-    icon:
-      src: https://linux.do/uploads/default/original/4X/c/a/b/cab454cc569520813e632fd4a5989106ca76d1e7.jpeg
-    link: https://blog.shiyaa.me
-  - title: Jim's Notes
-    details: Follow your heart
-    icon:
-      src: https://avatars1.githubusercontent.com/u/5828650?v=3&u=3612a2f967b6960d7bca6f747a79c1ff7f90d5e1&s=140
-    link: https://notes.jimliang.com
   - title: 红警HBK08
     details: 广快开饭！
     link: https://space.bilibili.com/1629347259
