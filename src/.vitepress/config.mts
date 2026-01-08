@@ -22,26 +22,26 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: '2025',
+        text: '修行',
         collapsed: false,
         items: [
-          { text: '亦梦', link: '/posts/2025/001-yimeng' },
+          { text: '亦梦', link: '/posts/xiuxing/001-yimeng' },
         ]
       },
       {
-        text: '2024',
-        collapsed: false,
+        text: '开发',
+        collapsed: true,
         items: [
-          { text: '视觉中国授权特朗普遇袭照片有感', link: '/posts/2024/10-copyright' },
-          { text: '基于网页的反模拟定位方案', link: '/posts/2024/09-anti-fakegps' },
-          { text: '使用 ttl.sh 替换阿里 Docker 镜像仓库', link: '/posts/2024/08-ttl-sh' },
-          { text: 'Mac 通过 FTP 上传文件', link: '/posts/2024/07-mac-ftp' },
-          { text: 'Puppeteer 随笔', link: '/posts/2024/06-puppeteer' },
-          { text: 'Cloudflare 部署 VitePress 最后修改时间不正确', link: '/posts/2024/05-cloudflare-vitepress-lastupdate' },
-          { text: '通过 Gitalk 为 VitePress 增加评论功能', link: '/posts/2024/04-vitepress-gitalk' },
-          { text: 'Navicat 15/16/17 在 MacOS 无限试用', link: '/posts/2024/03-navicat-trial' },
-          { text: 'Cloudflare 部署 VitePress 不显示文章', link: '/posts/2024/02-cloudflare-vitepress' },
-          { text: 'PM2 环境下自动更新的坑', link: '/posts/2024/01-pm2-treekill' },
+          { text: '视觉中国授权特朗普遇袭照片有感', link: '/posts/coder/10-copyright' },
+          { text: '基于网页的反模拟定位方案', link: '/posts/coder/09-anti-fakegps' },
+          { text: '使用 ttl.sh 替换阿里 Docker 镜像仓库', link: '/posts/coder/08-ttl-sh' },
+          { text: 'Mac 通过 FTP 上传文件', link: '/posts/coder/07-mac-ftp' },
+          { text: 'Puppeteer 随笔', link: '/posts/coder/06-puppeteer' },
+          { text: 'Cloudflare 部署 VitePress 最后修改时间不正确', link: '/posts/coder/05-cloudflare-vitepress-lastupdate' },
+          { text: '通过 Gitalk 为 VitePress 增加评论功能', link: '/posts/coder/04-vitepress-gitalk' },
+          { text: 'Navicat 15/16/17 在 MacOS 无限试用', link: '/posts/coder/03-navicat-trial' },
+          { text: 'Cloudflare 部署 VitePress 不显示文章', link: '/posts/coder/02-cloudflare-vitepress' },
+          { text: 'PM2 环境下自动更新的坑', link: '/posts/coder/01-pm2-treekill' },
         ]
       },
     ],
