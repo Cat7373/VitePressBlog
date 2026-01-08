@@ -22,6 +22,13 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: '2025',
+        collapsed: false,
+        items: [
+          { text: '亦梦', link: '/posts/2025/001-yimeng' },
+        ]
+      },
+      {
         text: '2024',
         collapsed: false,
         items: [
