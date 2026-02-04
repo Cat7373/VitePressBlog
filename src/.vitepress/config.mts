@@ -25,6 +25,10 @@ export default defineConfig({
         text: '修行',
         collapsed: false,
         items: [
+          { text: '真常应物', link: '/posts/xiuxing/006-zhenchangyingwu' },
+          { text: '水', link: '/posts/xiuxing/005-shui' },
+          { text: '如是和虚妄', link: '/posts/xiuxing/004-rushihexuwang' },
+          { text: '清静经和修行的出世入世', link: '/posts/xiuxing/003-chushirushi' },
           { text: '杯子', link: '/posts/xiuxing/002-beizi' },
           { text: '亦梦', link: '/posts/xiuxing/001-yimeng' },
         ]
